@@ -23,7 +23,7 @@ public class SmartTipActivity extends Activity {
     private FrameLayout btnEasyTip;
     private FrameLayout btnSmartTip;
     private TextView txtAmount;
-    private TextView txtTipAmount;
+    private TextView txtTipAmount; 
     private TextView txtTotalAmount;
     private RatingBar ratingBarMeal;
     private String currentInput;
