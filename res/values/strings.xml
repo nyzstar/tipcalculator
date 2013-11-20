@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TipCalculatorActivity!</string>
+    <string name="app_name">TipCalculator</string>
+    <string name="strAmount">SubTotal</string>
+    <string name="strTipPercent">Tip Percent</string>
+    <string name="strTipAmount">Tip</string>
+    <string name="strTotalAmount">Total</string>
+    <string name="strPeopleNum">No. People</string>
+    <string name="strPeopleNumError">!</string>
+    <string name="strAvgAmount">Average</string>
+    <string name="strAmountError">!</string>
+    <string name="strRating">How was your meal?</string>
+    <color name="grey_1">#F1F1F2</color>
+    <color name="grey_2">#919192</color>
+    <color name="mid_grey_1">#6E6E70</color>
+    <color name="mid_grey_2">#4E4E50</color>
+    <color name="dark_grey_1">#383739</color>
+    <color name="dark_grey_2">#323132</color>
+    <color name="dark_grey_3">#121112</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+</resources>

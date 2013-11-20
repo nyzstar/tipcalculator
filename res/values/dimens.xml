@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>    
+    <dimen name="font_keypad">18sp</dimen>
+    <dimen name="font_amount">18sp</dimen>
+    <dimen name="font_amount_title">12sp</dimen>
+    <dimen name="font_title">14sp</dimen>
+    <dimen name="margin_font">2dp</dimen>
+    
+</resources>
