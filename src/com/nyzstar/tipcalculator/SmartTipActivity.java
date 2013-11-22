@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -126,6 +127,11 @@ public class SmartTipActivity extends Activity {
 	}
 	
 	private void startEasyTipActivity(){
+		SharedPreferences settings = getSharedPreferences(TipCalculatorActivity.PREFS, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putBoolean(TipCalculatorActivity.EASY_MODE, true);
+		
+		editor.commit();
 		Intent intent = new Intent(this, TipCalculatorActivity.class);
 		startActivity(intent);
 		finish();
