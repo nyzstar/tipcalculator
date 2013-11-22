@@ -4,12 +4,14 @@
     android:layout_height="match_parent"
     android:background="@color/grey_2"
     android:orientation="vertical" >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="0dp"
-	    android:layout_weight="1" 
-	    android:orientation="horizontal">
-	    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_weight="1"
+	    android:orientation="horizontal" >
+
+	    <FrameLayout
 	        android:id="@+id/btnEasyTip2"
 	        android:layout_width="0dp"
 	        android:layout_weight="1"
@@ -40,7 +42,7 @@
 				    />
 			</LinearLayout>
 		</FrameLayout>
-	    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    <FrameLayout
 	        android:id="@+id/btnSmartTip2"
 	        android:layout_width="0dp"
 	        android:layout_weight="1"
@@ -369,16 +371,24 @@
 		        android:onClick="keypadListener"
 		        android:layout_weight="1">
 		    </Button>
-		    <Button
+		    <ImageButton
 		        android:id="@+id/btnDelete"
 		        style="@style/keypadFont"
-		        android:layout_height="match_parent"
 		        android:layout_width="0dp"
-		        android:text="DEL"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1"
+		        android:adjustViewBounds="true"
 		        android:background="@drawable/keypad_button_1"
+		        android:contentDescription="DEL"
+		        android:cropToPadding="false"
+		        android:maxHeight="30dp"
+		        android:maxWidth="30dp"
 		        android:onClick="keypadListener"
-		        android:layout_weight="1">
-		    </Button>
+		        android:padding="20dp"
+		        android:scaleType="fitCenter"
+		        android:src="@drawable/del_btn" >
+
+		    </ImageButton>
     	</TableRow>     	    	    
 </TableLayout>
 </LinearLayout>

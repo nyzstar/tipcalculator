@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -151,20 +151,21 @@ public class TipCalculatorActivity extends Activity {
 	
 	//listens for a click from one of the number buttons, and calls addNumber appropriately
 	public void keypadListener(View v)
-	{
-		Button b = (Button) v;
-		String value = (String) b.getText();
+	{	
+		
 		int intCurrentInputLength = currentInput.length();
 		int intEndIndex = intCurrentInputLength - 1;
-		if(value.compareTo("DEL") == 0){
-			Log.v(DEBUG, "DEL");
+		if (v instanceof ImageButton){
+			//Log.v(DEBUG, "DEL");
 			if(intCurrentInputLength != 0){
 				currentInput = currentInput.substring(0, intEndIndex);
 			}
 			updateField();
-		}else {
+		}else{
+			Button b = (Button) v;
+			String value = (String) b.getText();
 			if((value.compareTo("0") == 0 || value.compareTo("00") == 0) && intCurrentInputLength == 0){
-
+	
 			}else{
 				if(intCurrentInputLength + value.length() < intMaxInputLength){
 					currentInput = currentInput + value;
@@ -193,7 +194,7 @@ public class TipCalculatorActivity extends Activity {
 				displayResult(txtTipAmount, BigDecimal.valueOf(TipCalculator.getTipAmount()));
 				displayResult(txtAvgAmount, BigDecimal.valueOf(TipCalculator.getAvgAmount()));
 			}catch(Exception e){
-				Log.v(DEBUG, e.getMessage());
+//				Log.v(DEBUG, e.getMessage());
 			}
 
 		}else if(currentTextView.equals(txtTipAmount)){
@@ -209,7 +210,7 @@ public class TipCalculatorActivity extends Activity {
 				displayResultTipPercent(txtTipPercent, BigDecimal.valueOf(TipCalculator.getTipPercent()));
 				displayResult(txtAvgAmount, BigDecimal.valueOf(TipCalculator.getAvgAmount()));	
 			}catch(Exception e){
-				Log.v(DEBUG, e.getMessage());
+//				Log.v(DEBUG, e.getMessage());
 			}
 		}else if(currentTextView.equals(txtTipPercent)){
 			displayResultTipPercent(currentTextView, currentInput);
@@ -224,7 +225,7 @@ public class TipCalculatorActivity extends Activity {
 				displayResult(txtTipAmount, BigDecimal.valueOf(TipCalculator.getTipAmount()));
 				displayResult(txtAvgAmount, BigDecimal.valueOf(TipCalculator.getAvgAmount()));	
 			}catch(Exception e){
-				Log.v(DEBUG, e.getMessage());
+//				Log.v(DEBUG, e.getMessage());
 			}
 		}else if(currentTextView.equals(txtPeopleNum)){
 			displayResultPeople(currentTextView, currentInput);
@@ -245,7 +246,7 @@ public class TipCalculatorActivity extends Activity {
 				//displayResult(txtTipAmount, BigDecimal.valueOf(TipCalculator.getTipAmount()));
 				displayResult(txtAvgAmount, BigDecimal.valueOf(TipCalculator.getAvgAmount()));	
 			}catch(Exception e){
-				Log.v(DEBUG, e.getMessage());
+//				Log.v(DEBUG, e.getMessage());
 			}
 		}else{//total amount
 			displayResult(currentTextView, currentInput);
@@ -260,7 +261,7 @@ public class TipCalculatorActivity extends Activity {
 				displayResultTipPercent(txtTipPercent, BigDecimal.valueOf(TipCalculator.getTipPercent()));
 				displayResult(txtAvgAmount, BigDecimal.valueOf(TipCalculator.getAvgAmount()));
 			}catch(Exception e){
-				Log.v(DEBUG, e.getMessage());
+//				Log.v(DEBUG, e.getMessage());
 			}
 		}
 	}

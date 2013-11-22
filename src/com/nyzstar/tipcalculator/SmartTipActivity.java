@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
@@ -68,17 +68,17 @@ public class SmartTipActivity extends Activity {
 	//listens for a click from one of the number buttons, and calls addNumber appropriately
 	public void keypadListener(View v)
 	{
-		Button b = (Button) v;
-		String value = (String) b.getText();
 		int intCurrentInputLength = currentInput.length();
 		int intEndIndex = intCurrentInputLength - 1;
-		if(value.compareTo("DEL") == 0){
-			Log.v(DEBUG, "DEL");
+		if (v instanceof ImageButton){
+//			Log.v(DEBUG, "DEL");
 			if(intCurrentInputLength != 0){
 				currentInput = currentInput.substring(0, intEndIndex);
 			}
 			updateField();
-		}else {
+		}else{
+			Button b = (Button) v;
+			String value = (String) b.getText();
 			if((value.compareTo("0") == 0 || value.compareTo("00") == 0) && intCurrentInputLength == 0){
 
 			}else{
@@ -102,7 +102,7 @@ public class SmartTipActivity extends Activity {
 			displayResult(txtTotalAmount, BigDecimal.valueOf(tipCalculator.getTotalAmount()));
 			displayResult(txtTipAmount, BigDecimal.valueOf(tipCalculator.getTipAmount()));
 		}catch(Exception e){
-			Log.v(DEBUG, e.getMessage());
+			//Log.v(DEBUG, e.getMessage());
 		}
 	}
 		
